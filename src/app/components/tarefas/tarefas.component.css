@@ -1,0 +1,119 @@
+/* Centraliza tudo na tela */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff0f5;
+  min-height: 100vh;
+}
+
+.titulo-atividade {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #d63384;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estiliza o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2); /* sombra rosa */
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Botão rosa */
+button[type="submit"] {
+  padding: 12px;
+  background-color: #ff69b4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff1493;
+}
+
+/* Tabela para exibir tarefas */
+table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #ffe4ec;
+  font-weight: bold;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Botão de remover — vermelho claro */
+.remove-btn {
+  padding: 8px 14px;
+  background-color: #f08080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #e57373;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.success {
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+}
+
+.error {
+  background-color: #dc3545;
+  color: white;
+  text-align: center;
+}
+
