@@ -16,6 +16,10 @@ export class TarefasComponent {
   tarefasForm: FormGroup = new FormGroup ({});
   tarefas: Tarefa[] = [];
 
+  mensagem: string = '';
+  tipoMensagem: 'sucesso' | 'erro' | '' = '';
+
+
   constructor(private itensTarefa: TarefaService, private formBuilder: FormBuilder){
     this.tarefasForm = formBuilder.group({
       titulo: ['', Validators.required],
@@ -34,25 +38,41 @@ export class TarefasComponent {
   }
 
   //exercício 03
-
   addTarefa(): void {
     if (this.tarefasForm.valid) {
       const novaTarefa: Tarefa = {
-        id: Date.now(), //gera um ID
+        id: Date.now(),
         ...this.tarefasForm.value
       };
 
-      this.itensTarefa.add(novaTarefa);  //adiciona no service
-      this.list();                       //atualiza a lista
-      this.tarefasForm.reset();          //limpa o formulário
+      this.itensTarefa.add(novaTarefa);
+      this.list();
+      this.tarefasForm.reset();
+
+      this.mensagem = 'Tarefa adicionada com sucesso!';
+      this.tipoMensagem = 'sucesso';
+      this.limparMensagem();
+    } else {
+      this.mensagem = 'Preencha todos os campos obrigatórios.';
+      this.tipoMensagem = 'erro';
+      this.limparMensagem();
     }
   }
 
   removeTarefa(id: number): void {
     this.itensTarefa.remove(id);
-    this.list(); //atualiza a lista após remover
+    this.list();
+
+    this.mensagem = 'Tarefa removida com sucesso!';
+    this.tipoMensagem = 'sucesso';
+    this.limparMensagem();
   }
 
-
+  limparMensagem(): void {
+    setTimeout(() => {
+      this.mensagem = '';
+      this.tipoMensagem = '';
+    }, 3000); // esconde após 3 segundos
+  }
 
 }

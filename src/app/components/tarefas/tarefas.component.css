@@ -105,15 +105,39 @@ tr:last-child td {
   font-size: 16px;
 }
 
-.success {
-  background-color: #28a745;
-  color: white;
+/* Título */
+.titulo-atividade {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
   text-align: center;
 }
 
-.error {
-  background-color: #dc3545;
-  color: white;
+/* Mensagens de sucesso e erro */
+.mensagem-sucesso {
+  color: #ffffff;
+  background-color: #db86d2;
+  border: 1px solid #ad55a0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
   text-align: center;
+}
+
+.mensagem-erro {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Mensagem de erro nos campos */
+.erro {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-bottom: 8px;
 }
 

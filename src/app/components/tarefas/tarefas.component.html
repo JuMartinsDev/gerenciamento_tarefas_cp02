@@ -1,5 +1,9 @@
 <h2 class="titulo-atividade">Entregável 2 - Julia Martins</h2>
 
+<!-- Mensagem de feedback -->
+<div *ngIf="mensagem" [ngClass]="tipoMensagem === 'sucesso' ? 'mensagem-sucesso' : 'mensagem-erro'">
+  {{ mensagem }}
+</div>
 
 <form [formGroup]="tarefasForm" (ngSubmit)="addTarefa()">
   <input type="text" formControlName="titulo" placeholder="Título">
